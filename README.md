@@ -2,7 +2,7 @@
 A map of my stops during my recent vacation to [Iceland](https://www.inspiredbyiceland.com/).
 
 ## Dependencies
-* ReactJS
+* [ReactJS](https://reactjs.org/) - the UI Framework.
 * React-Router-DOM
 * [React-Bootstrap](https://react-bootstrap.github.io/) - for the style.
 
