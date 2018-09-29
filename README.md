@@ -4,7 +4,7 @@ A map of my stops during my recent vacation to [Iceland](https://www.inspiredbyi
 ## Dependencies
 * [ReactJS](https://reactjs.org/) - the UI Framework.
 * [React-Router-DOM](https://reacttraining.com/react-router/) - for keeping the URL synchronized.
-* [React-Bootstrap](https://react-bootstrap.github.io/) - for the style.
+* [reactstrap](https://reactstrap.github.io/) - for the style.
 
 ## Starting the App
 1. Ensure Node and NPM are installed.
