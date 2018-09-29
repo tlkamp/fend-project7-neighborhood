@@ -4,7 +4,7 @@ A map of my stops during my recent vacation to [Iceland](https://www.inspiredbyi
 ## Dependencies
 * ReactJS
 * React-Router-DOM
-* React-Bootstrap
+* [React-Bootstrap](https://react-bootstrap.github.io/) - for the style.
 
 ## Starting the App
 1. Ensure Node and NPM are installed.
