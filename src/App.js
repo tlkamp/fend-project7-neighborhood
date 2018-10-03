@@ -6,6 +6,14 @@ import logo from './logo.svg';
 import './App.css';
 
 class App extends Component {
+  state = {
+    locations: []
+  }
+
+  componentDidMount() {
+
+  }
+
   render() {
     return (
       <Container fluid className="App">
@@ -15,7 +23,7 @@ class App extends Component {
 
           {/* List Column */}
           <Col xs="3">
-            <Sidebar />
+            <Sidebar locations={this.state.locations} />
           </Col>
 
           {/* Map Column */}
