@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { Container, Row, Col } from 'reactstrap';
+import Header from './Header.js';
+import Sidebar from './Sidebar.js';
 import logo from './logo.svg';
 import './App.css';
 
@@ -7,10 +9,14 @@ class App extends Component {
   render() {
     return (
       <Container className="App">
+        <Header />
+
         <Row>
 
           {/* List Column */}
-          <Col xs="3"></Col>
+          <Col xs="3">
+            <Sidebar />
+          </Col>
 
           {/* Map Column */}
           <Col>
