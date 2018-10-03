@@ -8,7 +8,7 @@ import './App.css';
 class App extends Component {
   render() {
     return (
-      <Container className="App">
+      <Container fluid className="App">
         <Header />
 
         <Row>
