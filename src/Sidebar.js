@@ -8,6 +8,13 @@ class Sidebar extends Component {
         <InputGroup>
           <Input placeholder="search" />
         </InputGroup>
+        <div>
+          <ul>
+            {this.props.locations.map(location => (
+              <li>Location: {location.name}</li>
+            ))}
+          </ul>
+        </div>
       </sidebar>
     );
   }
