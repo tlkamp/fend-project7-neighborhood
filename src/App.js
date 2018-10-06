@@ -4,6 +4,7 @@ import Header from './Header.js';
 import Sidebar from './Sidebar.js';
 import logo from './logo.svg';
 import './App.css';
+import GoogleMapContainer from './GoogleMapContainer.js';
 
 class App extends Component {
   state = {
@@ -20,21 +21,12 @@ class App extends Component {
         <Header />
 
         <Row>
-
-          {/* List Column */}
           <Col xs="3">
             <Sidebar locations={this.state.locations} />
           </Col>
 
-          {/* Map Column */}
           <Col>
-            <header className="App-header">
-              <img src={logo} className="App-logo" alt="logo" />
-              <h1 className="App-title">Welcome to React</h1>
-            </header>
-            <p className="App-intro">
-              To get started, edit <code>src/App.js</code> and save to reload.
-            </p>
+            <GoogleMapContainer />
           </Col>
         </Row>
       </Container>
