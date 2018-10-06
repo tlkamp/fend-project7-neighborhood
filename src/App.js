@@ -20,7 +20,7 @@ class App extends Component {
         <Header />
 
         <Row>
-          <Col xs="3">
+          <Col sm="3">
             <Sidebar locations={this.state.locations} />
           </Col>
 
