@@ -2,9 +2,8 @@ import React, { Component } from 'react';
 import { Container, Row, Col } from 'reactstrap';
 import Header from './Header.js';
 import Sidebar from './Sidebar.js';
-import logo from './logo.svg';
+import GoogleMap from './GoogleMap';
 import './App.css';
-import GoogleMapContainer from './GoogleMapContainer.js';
 
 class App extends Component {
   state = {
@@ -26,7 +25,7 @@ class App extends Component {
           </Col>
 
           <Col>
-            <GoogleMapContainer />
+            <GoogleMap id={'map'} />
           </Col>
         </Row>
       </Container>
