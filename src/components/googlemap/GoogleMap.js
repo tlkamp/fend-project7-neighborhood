@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './GoogleMap.css';
 
 class GoogleMap extends Component {
   // TODO: Determine if necessary to bind 'this'
@@ -31,14 +32,9 @@ class GoogleMap extends Component {
   }
 
   render() {
-    const mapContainerStyle = {
-      height: '100vh',
-      width: '100%'
-    }
-
     return (
       // Render a div that will contain the map after the maps API loads
-      <div style={mapContainerStyle} id={this.props.id} />
+      <div className="map-container" id={this.props.id} />
     )
   }
 }

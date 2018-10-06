@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { Container, Row, Col } from 'reactstrap';
-import Header from './Header.js';
-import Sidebar from './Sidebar.js';
-import GoogleMap from './GoogleMap';
+import Header from './components/baselayout/Header.js';
+import Sidebar from './components/baselayout/Sidebar.js';
+import GoogleMap from './components/googlemap/GoogleMap.js';
 import './App.css';
 
 class App extends Component {
