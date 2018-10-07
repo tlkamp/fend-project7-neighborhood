@@ -7,7 +7,7 @@ class Sidebar extends Component {
     return (
       <div>
         <InputGroup>
-          <Input placeholder="search" />
+          <Input className="search-bar" placeholder="search" />
         </InputGroup>
         <div>
           <ul className="location-list">
