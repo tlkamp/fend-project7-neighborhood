@@ -8,10 +8,21 @@ class GoogleMap extends Component {
     this.onMapsApiLoaded.bind(this);
   }
 
+  renderMarkers(map, markerData) {
+    markerData.forEach(element => {
+      new window.google.maps.Marker({
+        position: element.coordinates,
+        map,
+        title: element.name
+      });
+    });
+  }
+
   onMapsApiLoaded() {
     const map = new window.google.maps.Map(
       document.getElementById(this.props.id),
       this.props.options || { zoom: 7, center: { lat: 64.963051, lng: -19.020836 } });
+    this.renderMarkers(map, this.props.locations)
   }
 
   componentDidMount() {
