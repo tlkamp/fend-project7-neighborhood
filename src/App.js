@@ -10,7 +10,7 @@ class App extends Component {
     // In lieu of hosting an express server, just hard code the locations.
     locations: [
       {
-        name: 'Viking World',
+        name: 'Viking World Museum',
         coordinates: { lat: 63.9759731, lng: -22.5311803 }
       },
       {
@@ -24,6 +24,7 @@ class App extends Component {
       {
         name: 'Brú Guesthouse',
         coordinates: { lat: 63.6658746, lng: -20.0476 },
+        searchterm: 'brú'
       },
       {
         name: 'Skógafoss',
@@ -39,15 +40,22 @@ class App extends Component {
       },
       {
         name: 'Vatnajökull Glacier',
-        coordinates: { lat: 64.4094659, lng: -17.5283124 }
+        coordinates: { lat: 64.4094659, lng: -17.5283124 },
+        searchterm: 'vatnajökull'
       },
       {
         name: 'Svartifoss',
-        coordinates: { lat: 64.0275306, lng: -16.9774969 }
+        coordinates: { lat: 64.0275306, lng: -16.9774969 },
+        searchterm: 'svartifoss'
       },
       {
         name: 'Hof 1 Hotel',
         coordinates: { lat: 63.9070156, lng: -16.708245 }
+      },
+      {
+        name: 'Þingvellir National Park',
+        coordinates: { lat: 64.2558307, lng: -21.1320502 },
+        searchterm: 'silfra'
       }
     ]
   }
