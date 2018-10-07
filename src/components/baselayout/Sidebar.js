@@ -1,21 +1,22 @@
 import React, { Component } from 'react';
 import { InputGroup, Input } from 'reactstrap';
+import './Sidebar.css';
 
 class Sidebar extends Component {
   render() {
     return (
-      <sidebar>
+      <div>
         <InputGroup>
           <Input placeholder="search" />
         </InputGroup>
         <div>
-          <ul>
+          <ul className="location-list">
             {this.props.locations.map(location => (
-              <li>Location: {location.name}</li>
+              <li className="location-list-item" key={location.name}>{location.name}</li>
             ))}
           </ul>
         </div>
-      </sidebar>
+      </div>
     );
   }
 }

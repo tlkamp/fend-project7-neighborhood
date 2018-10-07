@@ -1,0 +1,12 @@
+.location-list {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.location-list-item {
+  padding: 20px;
+  background: white;
+  display: flex;
+}
