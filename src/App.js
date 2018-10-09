@@ -3,6 +3,7 @@ import { Container, Row, Col } from 'reactstrap';
 import Header from './components/baselayout/Header.js';
 import Sidebar from './components/baselayout/Sidebar.js';
 import GoogleMap from './components/googlemap/GoogleMap.js';
+import IcelandMap from './components/googlemap/IcelandMap';
 import './App.css';
 
 class App extends Component {
@@ -84,7 +85,8 @@ class App extends Component {
           </Col>
 
           <Col>
-            <GoogleMap id={'map'} locations={this.state.locations} />
+            {/* <GoogleMap id={'map'} locations={this.state.locations} /> */}
+            <IcelandMap />
           </Col>
         </Row>
       </Container>
