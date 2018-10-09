@@ -16,7 +16,10 @@ class IcelandMap extends Component {
         defaultZoom={this.props.zoom}
         bootstrapURLKeys={{ key: 'AIzaSyBiaMaHdJ9wp8EkO77je-iN4e2bS2DZDaU', language: 'en' }}
       >
-        <Marker lat={63.9759731} lng={-22.5311803} />
+        {this.props.locations.map(location => (
+          <Marker key={location.name} lat={location.coordinates.lat} lng={location.coordinates.lng} />
+        ))}
+        {/* <Marker lat={63.9759731} lng={-22.5311803} /> */}
       </GoogleMapReact>
     );
   }

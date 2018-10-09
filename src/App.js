@@ -86,7 +86,7 @@ class App extends Component {
 
           <Col>
             {/* <GoogleMap id={'map'} locations={this.state.locations} /> */}
-            <IcelandMap />
+            <IcelandMap locations={this.state.locations} />
           </Col>
         </Row>
       </Container>
