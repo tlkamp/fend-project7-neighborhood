@@ -1,19 +1,39 @@
 import React, { Component } from 'react';
+import ReactDOM from 'react-dom';
 import './GoogleMap.css';
+import InfoWindow from './InfoWindow';
 
 class GoogleMap extends Component {
   // TODO: Determine if necessary to bind 'this'
   constructor(props) {
     super(props);
     this.onMapsApiLoaded.bind(this);
+    this.createInfoWindow.bind(this);
+  }
+
+  // From the very helpful guide: http://cuneyt.aliustaoglu.biz/en/using-google-maps-in-react-without-custom-libraries/
+  createInfoWindow(map, location) {
+    const infoWindow = new window.google.maps.InfoWindow({
+      content: '<div id="info-window">div?</div>',
+      position: { lat: location.coordinates.lat, lng: location.coordinates.lng }
+    });
+
+    infoWindow.addListener('domready', event => {
+      ReactDOM.render(<InfoWindow location={location} />, document.getElementById('info-window'));
+    });
+
+    infoWindow.open(map);
   }
 
   renderMarkers(map, markerData) {
     markerData.forEach(element => {
-      new window.google.maps.Marker({
+      let marker = new window.google.maps.Marker({
         position: element.coordinates,
         map,
         title: element.name
+      });
+      marker.addListener('click', event => {
+        this.createInfoWindow(map, element);
       });
     });
   }

@@ -60,6 +60,19 @@ class App extends Component {
     ]
   }
 
+  componentDidMount() {
+    // let updatedLocations = [];
+    // this.state.locations.forEach(location => {
+    //   let url = `https://en.wikipedia.org/w/api.php?format=json&origin=*&action=query&prop=extracts&exintro&explaintext&redirects=1&titles=${encodeURI(location.searchterm || location.name)}`;
+    //   console.log(url)
+    //   fetch(url)
+    //     .then(res => res.json())
+    //     .then(data => {
+    //       console.log(data.query.pages)
+    //     })
+    // });
+  }
+
   render() {
     return (
       <Container fluid className="App">
