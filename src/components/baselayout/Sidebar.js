@@ -3,11 +3,27 @@ import { InputGroup, Input } from 'reactstrap';
 import './Sidebar.css';
 
 class Sidebar extends Component {
+
+  state = {
+    query: ''
+  }
+
+  updateQuery = (query) => {
+    this.setState({ query: query.trim() });
+    if (this.props.onQueryChange) {
+      this.props.onQueryChange(query);
+    }
+  }
+
+  clearQuery = () => {
+    this.setState({ query: '' });
+  }
+
   render() {
     return (
       <div>
         <InputGroup>
-          <Input className="search-bar" placeholder="search" />
+          <Input onChange={(event) => this.updateQuery(event.target.value)} className="search-bar" placeholder="search" />
         </InputGroup>
         <div>
           <ul className="location-list">

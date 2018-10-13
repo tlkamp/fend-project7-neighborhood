@@ -3,9 +3,15 @@ import { Container, Row, Col } from 'reactstrap';
 import Header from './components/baselayout/Header.js';
 import Sidebar from './components/baselayout/Sidebar.js';
 import IcelandMap from './components/map/IcelandMap';
+import escapeRegExp from 'escape-string-regexp';
 import './App.css';
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+    this.handleQueryChange = this.handleQueryChange.bind(this);
+  }
+
   state = {
     // In lieu of hosting an express server, just hard code the locations.
     locations: [
@@ -60,6 +66,15 @@ class App extends Component {
     ]
   }
 
+  handleQueryChange = (query) => {
+    if (query !== '') {
+      const match = new RegExp(escapeRegExp(query), 'i');
+      this.setState({ showingLocations: this.state.locations.filter((location) => match.test(location.name)) });
+    } else {
+      this.setState({ showingLocations: this.state.locations })
+    }
+  }
+
   componentDidMount() {
     // let updatedLocations = [];
     // this.state.locations.forEach(location => {
@@ -80,11 +95,11 @@ class App extends Component {
 
         <Row>
           <Col sm="3">
-            <Sidebar locations={this.state.locations} />
+            <Sidebar onQueryChange={this.handleQueryChange} locations={this.state.showingLocations || this.state.locations} />
           </Col>
 
           <Col>
-            <IcelandMap locations={this.state.locations} />
+            <IcelandMap locations={this.state.showingLocations || this.state.locations} />
           </Col>
         </Row>
       </Container>
