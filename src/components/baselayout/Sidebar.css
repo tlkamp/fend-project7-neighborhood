@@ -17,7 +17,7 @@
 /* From the React Contacts project */
 .search-bar {
   width: 100%;
-  margin: 5px 0;
+  margin: 5px;
   padding: 20px 20px 20px 60px;
   background-image: url('../../icons/search.svg');
   background-repeat: no-repeat;
