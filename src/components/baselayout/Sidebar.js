@@ -11,7 +11,10 @@ class Sidebar extends Component {
   }
 
   toggleList = () => {
-    this.setState({ collapse: !this.state.collapse, showHide: this.state.showHide === 'Hide' ? 'Show' : 'Hide' });
+    this.setState({
+      collapse: !this.state.collapse,
+      showHide: !this.state.collapse ? 'Show' : 'Hide'
+    });
   }
 
   updateQuery = (query) => {
