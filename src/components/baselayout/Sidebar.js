@@ -1,11 +1,17 @@
 import React, { Component } from 'react';
-import { InputGroup, Input } from 'reactstrap';
+import { InputGroup, Input, Collapse, Button } from 'reactstrap';
 import './Sidebar.css';
 
 class Sidebar extends Component {
 
   state = {
-    query: ''
+    query: '',
+    showHide: 'Hide',
+    collapse: false
+  }
+
+  toggleList = () => {
+    this.setState({ collapse: !this.state.collapse, showHide: this.state.showHide === 'Hide' ? 'Show' : 'Hide' });
   }
 
   updateQuery = (query) => {
@@ -24,14 +30,15 @@ class Sidebar extends Component {
       <div>
         <InputGroup>
           <Input onChange={(event) => this.updateQuery(event.target.value)} className="search-bar" placeholder="search" />
+          <Button size="sm" outline color="secondary" onClick={this.toggleList}>{this.state.showHide}</Button>
         </InputGroup>
-        <div>
+        <Collapse isOpen={!this.state.collapse}>
           <ul className="location-list">
             {this.props.locations.map(location => (
               <li className="location-list-item" key={location.name}>{location.name}</li>
             ))}
           </ul>
-        </div>
+        </Collapse>
       </div>
     );
   }
