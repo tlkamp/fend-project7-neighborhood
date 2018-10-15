@@ -17,7 +17,7 @@ class IcelandMap extends Component {
         bootstrapURLKeys={{ key: 'AIzaSyBiaMaHdJ9wp8EkO77je-iN4e2bS2DZDaU', language: 'en' }}
       >
         {this.props.locations.map(location => (
-          <Marker key={location.name} lat={location.coordinates.lat} lng={location.coordinates.lng} />
+          <Marker key={location.name} location={location} lat={location.coordinates.lat} lng={location.coordinates.lng} />
         ))}
       </GoogleMapReact>
     );
