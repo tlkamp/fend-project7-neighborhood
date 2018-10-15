@@ -15,7 +15,7 @@
 }
 
 .location-list-item:hover {
-  color: blue;
+  font-size: 1.1em;
 }
 
 /* From the React Contacts project */
