@@ -19,7 +19,6 @@ class IcelandMap extends Component {
         {this.props.locations.map(location => (
           <Marker key={location.name} lat={location.coordinates.lat} lng={location.coordinates.lng} />
         ))}
-        {/* <Marker lat={63.9759731} lng={-22.5311803} /> */}
       </GoogleMapReact>
     );
   }
