@@ -8,7 +8,9 @@ class Marker extends Component {
   }
 
   onClick = () => {
-    this.setState({ infoWindowShowing: !this.state.infoWindowShowing });
+    this.setState((previousState) => {
+      return { infoWindowShowing: !previousState.infoWindowShowing }
+    });
   }
 
   render() {
