@@ -7,10 +7,6 @@ import escapeRegExp from 'escape-string-regexp';
 import './App.css';
 
 class App extends Component {
-  constructor(props) {
-    super(props);
-    this.handleQueryChange = this.handleQueryChange.bind(this);
-  }
 
   state = {
     // In lieu of hosting an express server, just hard code the locations.
@@ -75,6 +71,14 @@ class App extends Component {
     }
   }
 
+  handleMarkerClick = () => {
+
+  }
+
+  handleLocationClick = () => {
+
+  }
+
   componentDidMount() {
     // let updatedLocations = [];
     // this.state.locations.forEach(location => {
@@ -95,11 +99,11 @@ class App extends Component {
 
         <Row>
           <Col sm="3">
-            <Sidebar onQueryChange={this.handleQueryChange} locations={this.state.showingLocations || this.state.locations} />
+            <Sidebar onQueryChange={this.handleQueryChange} onLocationClick={this.handleLocationClick} locations={this.state.showingLocations || this.state.locations} />
           </Col>
 
           <Col>
-            <IcelandMap locations={this.state.showingLocations || this.state.locations} />
+            <IcelandMap onMarkerClick={this.handleMarkerClick} locations={this.state.showingLocations || this.state.locations} />
           </Col>
         </Row>
       </Container>
