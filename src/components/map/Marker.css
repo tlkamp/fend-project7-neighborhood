@@ -1,0 +1,7 @@
+svg {
+  fill: red;
+}
+
+svg:hover {
+  fill: blue;
+}

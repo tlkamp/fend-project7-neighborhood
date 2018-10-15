@@ -6,7 +6,7 @@ class InfoWindow extends Component {
 
   render() {
     return (
-      <div>
+      <div className="info-window">
         <Card>
           <CardImg top src={this.props.location.imgUrl || 'https://via.placeholder.com/140x100'} />
           <CardBody>
