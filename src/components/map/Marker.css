@@ -3,5 +3,6 @@ svg {
 }
 
 svg:hover {
+  cursor: pointer;
   fill: blue;
 }
