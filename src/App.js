@@ -71,12 +71,13 @@ class App extends Component {
     }
   }
 
-  handleMarkerClick = () => {
-
-  }
-
-  handleLocationClick = () => {
-
+  handleLocationSelect = (locationName) => {
+    console.log('handling location select')
+    const locationsCopy = JSON.parse(JSON.stringify(this.state.locations));
+    locationsCopy.forEach(location => {
+      location.active = location.name === locationName && !location.active;
+    });
+    this.setState({ locations: locationsCopy });
   }
 
   componentDidMount() {
@@ -99,11 +100,11 @@ class App extends Component {
 
         <Row>
           <Col sm="3">
-            <Sidebar onQueryChange={this.handleQueryChange} onLocationClick={this.handleLocationClick} locations={this.state.showingLocations || this.state.locations} />
+            <Sidebar onQueryChange={this.handleQueryChange} onLocationClick={this.handleLocationSelect} locations={this.state.showingLocations || this.state.locations} />
           </Col>
 
           <Col>
-            <IcelandMap onMarkerClick={this.handleMarkerClick} locations={this.state.showingLocations || this.state.locations} />
+            <IcelandMap onMarkerClick={this.handleLocationSelect} locations={this.state.showingLocations || this.state.locations} />
           </Col>
         </Row>
       </Container>

@@ -10,8 +10,9 @@
   padding: 20px;
   cursor: pointer;
   background: white;
-  display: flex;
+  text-align: left;
   border-bottom: 1px solid #ddd;
+  width: 100%;
 }
 
 .location-list-item:hover {
@@ -29,4 +30,10 @@
   background-size: 1.2em;
   font-size: 1.2em;
   outline: none;
+}
+
+span {
+  color: blue;
+  width: 100%;
+  font-weight: bold;
 }
