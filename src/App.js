@@ -100,11 +100,17 @@ class App extends Component {
 
         <Row>
           <Col sm="3">
-            <Sidebar onQueryChange={this.handleQueryChange} onLocationClick={this.handleLocationSelect} locations={this.state.showingLocations || this.state.locations} />
+            <Sidebar onQueryChange={this.handleQueryChange}
+              onLocationClick={this.handleLocationSelect}
+              locations={this.state.showingLocations || this.state.locations}
+            />
           </Col>
 
           <Col>
-            <IcelandMap onMarkerClick={this.handleLocationSelect} locations={this.state.showingLocations || this.state.locations} />
+            <IcelandMap
+              onMarkerClick={this.handleLocationSelect}
+              locations={this.state.showingLocations || this.state.locations}
+            />
           </Col>
         </Row>
       </Container>
