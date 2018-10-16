@@ -9,6 +9,7 @@ import './App.css';
 class App extends Component {
 
   state = {
+    query: '',
     // In lieu of hosting an express server, just hard code the locations.
     locations: [
       {
@@ -63,12 +64,7 @@ class App extends Component {
   }
 
   handleQueryChange = (query) => {
-    if (query !== '') {
-      const match = new RegExp(escapeRegExp(query), 'i');
-      this.setState({ showingLocations: this.state.locations.filter((location) => match.test(location.name)) });
-    } else {
-      this.setState({ showingLocations: this.state.locations })
-    }
+    this.setState({ query })
   }
 
   handleLocationSelect = (locationName) => {
@@ -94,6 +90,9 @@ class App extends Component {
   }
 
   render() {
+    const match = new RegExp(escapeRegExp(this.state.query), 'i');
+    const locationsToRender = this.state.locations.filter(location => match.test(location.name));
+
     return (
       <Container fluid className="App">
         <Header />
@@ -102,14 +101,14 @@ class App extends Component {
           <Col sm="3">
             <Sidebar onQueryChange={this.handleQueryChange}
               onLocationClick={this.handleLocationSelect}
-              locations={this.state.showingLocations || this.state.locations}
+              locations={locationsToRender}
             />
           </Col>
 
           <Col>
             <IcelandMap
               onMarkerClick={this.handleLocationSelect}
-              locations={this.state.showingLocations || this.state.locations}
+              locations={locationsToRender}
             />
           </Col>
         </Row>
