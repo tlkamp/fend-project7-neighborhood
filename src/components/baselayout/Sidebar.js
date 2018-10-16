@@ -5,7 +5,6 @@ import './Sidebar.css';
 class Sidebar extends Component {
 
   state = {
-    query: '',
     showHide: 'Hide',
     collapse: false
   }
@@ -20,14 +19,9 @@ class Sidebar extends Component {
   }
 
   updateQuery = (query) => {
-    this.setState({ query: query.trim() });
     if (this.props.onQueryChange) {
       this.props.onQueryChange(query);
     }
-  }
-
-  clearQuery = () => {
-    this.setState({ query: '' });
   }
 
   render() {
