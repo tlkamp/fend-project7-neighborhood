@@ -8,10 +8,10 @@ This app is bootstrapped with [`create-react-app`](https://www.npmjs.com/package
 * [`reactstrap`](https://reactstrap.github.io/) and [Bootstrap](http://getbootstrap.com/) - for the style.
 * [`google-map-react`](https://www.npmjs.com/package/google-map-react) and [Google Maps](https://developers.google.com/maps/documentation/) - Google Maps API wrapped into React Components.
 * [Unsplash](https://unsplash.com/) - for image hosting/retrieval.
+* [`gh-pages`](https://www.npmjs.com/package/gh-pages) - for deploying this React app to GitHub pages.
 
 ## Viewing the App
 This app is hosted with GitHub pages: https://tlkamp.github.io/fend-project7-neighborhood/
-
 
 #### Starting the Dev Server
 _If_ you want to run the app locally, follow these instructions:
