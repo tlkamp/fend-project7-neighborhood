@@ -14,39 +14,47 @@ class App extends Component {
     locations: [
       {
         name: 'Viking World Museum',
-        coordinates: { lat: 63.9759731, lng: -22.5311803 }
+        coordinates: { lat: 63.9759731, lng: -22.5311803 },
+        photoid: ''
       },
       {
         name: 'Hallgrímskirkja',
-        coordinates: { lat: 64.1417172, lng: -21.9288257 }
+        coordinates: { lat: 64.1417172, lng: -21.9288257 },
+        photoid: ''
       },
       {
         name: 'Brú Guesthouse',
         coordinates: { lat: 63.6658746, lng: -20.0476 },
-        searchterm: 'brú'
+        searchterm: 'brú',
+        photoid: ''
       },
       {
         name: 'Skógafoss',
-        coordinates: { lat: 63.5320147, lng: -19.513565 }
+        coordinates: { lat: 63.5320147, lng: -19.513565 },
+        photoid: ''
       },
       {
         name: 'Sólheimasandur Plane Wreck',
-        coordinates: { lat: 63.4590942, lng: -19.3669009 }
+        coordinates: { lat: 63.4590942, lng: -19.3669009 },
+        photoid: ''
       },
       {
         name: 'Vatnajökull Glacier',
         coordinates: { lat: 64.4094659, lng: -17.5283124 },
-        searchterm: 'vatnajökull'
+        searchterm: 'vatnajökull',
+        photoid: ''
       },
       {
         name: 'Svartifoss',
         coordinates: { lat: 64.0275306, lng: -16.9774969 },
-        searchterm: 'svartifoss'
+        searchterm: 'svartifoss',
+        photoid: '',
       },
       {
         name: 'Þingvellir National Park',
         coordinates: { lat: 64.2558307, lng: -21.1320502 },
-        searchterm: 'silfra'
+        searchterm: 'silfra',
+        photoid: ''
       }
     ]
   }
