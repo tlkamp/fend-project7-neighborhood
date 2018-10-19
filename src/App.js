@@ -34,10 +34,6 @@ class App extends Component {
         coordinates: { lat: 63.4590942, lng: -19.3669009 }
       },
       {
-        name: 'Smi∂jan Brugghús',
-        coordinates: { lat: 63.4172624, lng: -19.012781 }
-      },
-      {
         name: 'Vatnajökull Glacier',
         coordinates: { lat: 64.4094659, lng: -17.5283124 },
         searchterm: 'vatnajökull'
