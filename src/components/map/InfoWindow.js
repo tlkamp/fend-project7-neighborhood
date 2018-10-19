@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Card, CardImg, CardText, CardBody, CardTitle, CardSubtitle } from 'reactstrap';
+import { Card, CardImg, CardText, CardBody, CardTitle } from 'reactstrap';
 import './InfoWindow.css';
 
 class InfoWindow extends Component {
@@ -11,7 +11,6 @@ class InfoWindow extends Component {
           <CardImg top src={this.props.location.photoUrl || 'https://via.placeholder.com/140x100'} alt={this.props.location.name} />
           <CardBody>
             <CardTitle>{this.props.location.name}</CardTitle>
-            <CardSubtitle></CardSubtitle>
             <CardText>{this.props.location.description}</CardText>
           </CardBody>
         </Card>
