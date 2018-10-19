@@ -86,7 +86,8 @@ class App extends Component {
           headers: {
             'Authorization': `Client-ID ${unsplashClient}`
           }
-        }).then(response => response.json())
+        })
+          .then(response => response.json())
           .then(result => {
             location.photoUrl = result.urls.small;
           });
