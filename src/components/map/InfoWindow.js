@@ -8,7 +8,7 @@ class InfoWindow extends Component {
     return (
       <div className="info-window">
         <Card>
-          <CardImg top src={this.props.location.photoUrl || 'https://via.placeholder.com/140x100'} />
+          <CardImg top src={this.props.location.photoUrl || 'https://via.placeholder.com/140x100'} alt={location.name} />
           <CardBody>
             <CardTitle>{this.props.location.name}</CardTitle>
             <CardSubtitle></CardSubtitle>
