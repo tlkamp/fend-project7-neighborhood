@@ -10,6 +10,7 @@ class App extends Component {
 
   state = {
     query: '',
+    mapCenter: '',
     // In lieu of hosting an express server, just hard code the locations.
     locations: [
       {
@@ -67,13 +68,12 @@ class App extends Component {
     this.setState({ query })
   }
 
-  handleLocationSelect = (locationName) => {
-    console.log('handling location select')
+  handleLocationSelect = (locationObj) => {
     const locationsCopy = JSON.parse(JSON.stringify(this.state.locations));
     locationsCopy.forEach(location => {
-      location.active = location.name === locationName && !location.active;
+      location.active = location.name === locationObj.name && !location.active;
     });
-    this.setState({ locations: locationsCopy });
+    this.setState({ locations: locationsCopy, mapCenter: locationObj.coordinates });
   }
 
   componentDidMount() {
@@ -114,6 +114,7 @@ class App extends Component {
 
           <Col className="map-container">
             <IcelandMap
+              center={this.state.mapCenter || undefined}
               onMarkerClick={this.handleLocationSelect}
               locations={locationsToRender}
             />

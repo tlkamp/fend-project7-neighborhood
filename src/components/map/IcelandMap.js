@@ -12,7 +12,7 @@ class IcelandMap extends Component {
   render() {
     return (
       <GoogleMapReact className="map-container"
-        defaultCenter={this.props.center}
+        center={this.props.center}
         defaultZoom={this.props.zoom}
         bootstrapURLKeys={{ key: 'AIzaSyBiaMaHdJ9wp8EkO77je-iN4e2bS2DZDaU', language: 'en' }}
       >

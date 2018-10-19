@@ -34,7 +34,7 @@ class Sidebar extends Component {
         <Collapse isOpen={!this.state.collapse}>
           <ul className="location-list">
             {this.props.locations.map(location => (
-              <li className="location-list-item" onClick={() => this.props.onLocationClick(location.name)} key={location.name}>
+              <li className="location-list-item" onClick={() => this.props.onLocationClick(location)} key={location.name}>
                 {location.name}
                 {location.active ? <span>&#9733;</span> : null}
               </li>
