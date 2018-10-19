@@ -27,7 +27,7 @@ class Sidebar extends Component {
   render() {
     return (
       <div>
-        <InputGroup className="input-set">
+        <InputGroup>
           <Input onChange={(event) => this.updateQuery(event.target.value)} className="search-bar" placeholder="search" />
           <Button size="sm" color="link" onClick={this.toggleList}>{this.state.showHide}</Button>
         </InputGroup>
