@@ -1,10 +1,13 @@
 # Neighborhood Map
 A map of my stops during my recent vacation to [Iceland](https://www.inspiredbyiceland.com/).
 
+This app is bootstrapped with [`create-react-app`](https://www.npmjs.com/package/create-react-app).
+
 ## Dependencies
 * [ReactJS](https://reactjs.org/) - the UI Framework.
-* [React-Router-DOM](https://reacttraining.com/react-router/) - for keeping the URL synchronized.
 * [reactstrap](https://reactstrap.github.io/) and [Bootstrap](http://getbootstrap.com/) - for the style.
+* [google-map-react](https://www.npmjs.com/package/google-map-react) - Google Maps API wrapped into React Components.
+* [unsplash](https://unsplash.com/) - for image hosting/retrieval.
 
 ## Starting the App
 1. Ensure Node and NPM are installed.
