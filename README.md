@@ -9,7 +9,12 @@ This app is bootstrapped with [`create-react-app`](https://www.npmjs.com/package
 * [google-map-react](https://www.npmjs.com/package/google-map-react) - Google Maps API wrapped into React Components.
 * [unsplash](https://unsplash.com/) - for image hosting/retrieval.
 
-## Starting the App
+## Viewing the App
+This app is hosted with GitHub pages: https://tlkamp.github.io/fend-project7-neighborhood/
+
+
+### Starting the Dev Server
+_If_ you want to run the app locally, follow these instructions:
 1. Ensure Node and NPM are installed.
 2. Clone or download this repository - note the location where the files are stored.
 3. Open a terminal in the location where the files are stored and run:
@@ -19,5 +24,7 @@ $ npm install && npm start
 ```
  A browser window should open and take you to the site. If it doesn't, you can navigate to [`localhost:3000`](http://localhost:3000) (or click the link!).
 
-## Stopping the App
+ *Note:* The service worker won't cache files served by the development server.
+
+### Stopping the Dev Server
 To stop the server, hit `control + c` in the terminal window where it is running.
