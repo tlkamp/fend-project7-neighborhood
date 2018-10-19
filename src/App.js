@@ -17,10 +17,6 @@ class App extends Component {
         coordinates: { lat: 63.9759731, lng: -22.5311803 }
       },
       {
-        name: 'Grand Hótel Reykjavík',
-        coordinates: { lat: 64.1423523, lng: -21.8937487 }
-      },
-      {
         name: 'Hallgrímskirkja',
         coordinates: { lat: 64.1417172, lng: -21.9288257 }
       },
@@ -50,10 +46,6 @@ class App extends Component {
         name: 'Svartifoss',
         coordinates: { lat: 64.0275306, lng: -16.9774969 },
         searchterm: 'svartifoss'
-      },
-      {
-        name: 'Hof 1 Hotel',
-        coordinates: { lat: 63.9070156, lng: -16.708245 }
       },
       {
         name: 'Þingvellir National Park',
