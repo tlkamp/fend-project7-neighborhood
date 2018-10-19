@@ -112,7 +112,7 @@ class App extends Component {
             />
           </Col>
 
-          <Col>
+          <Col className="map-container">
             <IcelandMap
               onMarkerClick={this.handleLocationSelect}
               locations={locationsToRender}
