@@ -17,7 +17,7 @@ class Marker extends Component {
           <circle cx="7" cy="7" r="5" stroke="white" strokeWidth="1" />
         </svg>
 
-        {this.props.location.active ? (<InfoWindow location={this.props.location} />) : ''}
+        {this.props.location.active ? (<InfoWindow location={this.props.location} />) : null}
       </div>
     );
   }
