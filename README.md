@@ -1,5 +1,5 @@
 # Neighborhood Map
-A map of my stops during my recent vacation to [Iceland](https://www.inspiredbyiceland.com/).
+A map of my stops during my recent vacation to [Iceland](https://www.inspiredbyiceland.com/). All photographs used were taken by me and hosted on [Unsplash](https://unsplash.com/tlkamp).
 
 This app is bootstrapped with [`create-react-app`](https://www.npmjs.com/package/create-react-app).
 
