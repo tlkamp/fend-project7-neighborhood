@@ -48,7 +48,7 @@ class App extends Component {
         name: 'Svartifoss',
         coordinates: { lat: 64.0275306, lng: -16.9774969 },
         searchterm: 'svartifoss',
-        photoid: '',
+        photoid: 'lvih8Xe8jFc',
       },
       {
         name: 'Þingvellir National Park',
@@ -73,6 +73,23 @@ class App extends Component {
   }
 
   componentDidMount() {
+    const unsplashClient = 'bd51d15e794da625807ddcb09eb619db5f26e44f4a23ece2415657b20899c7aa';
+
+    const locationsCopy = JSON.parse(JSON.stringify(this.state.locations));
+    locationsCopy.forEach(location => {
+      if (location.photoid) {
+        fetch(`https://api.unsplash.com/photos/${location.photoid}/?w=140&h=100`, {
+          headers: {
+            'Authorization': `Client-ID ${unsplashClient}`
+          }
+        }).then(response => response.json())
+          .then(result => {
+            location.photoUrl = result.urls.small;
+          });
+      }
+    });
+
+    this.setState({ locations: locationsCopy })
     // let updatedLocations = [];
     // this.state.locations.forEach(location => {
     //   let url = `https://en.wikipedia.org/w/api.php?format=json&origin=*&action=query&prop=extracts&exintro&explaintext&redirects=1&titles=${encodeURI(location.searchterm || location.name)}`;
