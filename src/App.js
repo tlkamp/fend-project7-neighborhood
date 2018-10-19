@@ -104,8 +104,8 @@ class App extends Component {
       <Container fluid className="App">
         <Header />
 
-        <Row>
-          <Col sm="3">
+        <Row className="row-flex">
+          <Col md="3">
             <Sidebar onQueryChange={this.handleQueryChange}
               onLocationClick={this.handleLocationSelect}
               locations={locationsToRender}
