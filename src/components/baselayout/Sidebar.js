@@ -27,9 +27,9 @@ class Sidebar extends Component {
   render() {
     return (
       <div>
-        <InputGroup>
+        <InputGroup className="input-set">
           <Input onChange={(event) => this.updateQuery(event.target.value)} className="search-bar" placeholder="search" />
-          <Button size="sm" outline color="secondary" onClick={this.toggleList}>{this.state.showHide}</Button>
+          <Button size="sm" color="link" onClick={this.toggleList}>{this.state.showHide}</Button>
         </InputGroup>
         <Collapse isOpen={!this.state.collapse}>
           <ul className="location-list">
@@ -38,8 +38,7 @@ class Sidebar extends Component {
                 {location.name}
                 {location.active ? <span>&#9733;</span> : null}
               </li>
-            )
-            )}
+            ))}
           </ul>
         </Collapse>
       </div>
