@@ -11,11 +11,14 @@ class ErrorBoundary extends Component {
   }
 
   render() {
-    return this.state.error ? (
-      <Alert color="warning">
-        We couldn't load the map correctly. Are you offline?
-      </Alert>
-    ) : this.props.children;
+    if (this.state.error) {
+      return (
+        <Alert color="warning">
+          We couldn't load this resource correctly. Are you offline?
+        </Alert>
+      );
+    }
+    return this.props.children;
   }
 }
 
