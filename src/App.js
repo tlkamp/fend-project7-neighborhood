@@ -138,6 +138,8 @@ class App extends Component {
 
           <Col className="map-container">
             <IcelandMap
+              id="map"
+              aria-role="application"
               center={this.state.mapCenter || undefined}
               onMarkerClick={this.handleLocationSelect}
               locations={locationsToRender}
