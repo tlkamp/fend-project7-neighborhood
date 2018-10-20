@@ -94,9 +94,6 @@ class App extends Component {
     return (
       <Container fluid className="App">
         <Header />
-        {/* <Alert color="warning" isOpen={this.state.alert && this.state.visible} toggle={this.onDismiss}>
-          You are offline.
-        </Alert> */}
         <Row className="row-flex">
           <Col md="3">
             <Sidebar onQueryChange={this.handleQueryChange}
