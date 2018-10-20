@@ -4,6 +4,7 @@ import Header from './components/baselayout/Header.js';
 import Sidebar from './components/baselayout/Sidebar.js';
 import IcelandMap from './components/map/IcelandMap';
 import escapeRegExp from 'escape-string-regexp';
+import ErrorBoundary from './components/ErrorBoundary';
 import './App.css';
 
 class App extends Component {
@@ -92,13 +93,15 @@ class App extends Component {
           </Col>
 
           <Col className="map-container">
-            <IcelandMap
-              id="map"
-              role="application"
-              center={this.state.mapCenter || undefined}
-              onMarkerClick={this.handleLocationSelect}
-              locations={locationsToRender}
-            />
+            <ErrorBoundary>
+              <IcelandMap
+                id="map"
+                role="application"
+                center={this.state.mapCenter || undefined}
+                onMarkerClick={this.handleLocationSelect}
+                locations={locationsToRender}
+              />
+            </ErrorBoundary>
           </Col>
         </Row>
       </Container>
