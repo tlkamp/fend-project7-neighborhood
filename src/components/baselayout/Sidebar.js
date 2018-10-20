@@ -24,6 +24,15 @@ class Sidebar extends Component {
     }
   }
 
+  onKeyDown = (keyCode, location) => {
+    // if the key is enter or space
+    if (keyCode === 13 || keyCode === 32) {
+      if (this.props.onLocationClick) {
+        this.props.onLocationClick(location);
+      }
+    }
+  }
+
   render() {
     return (
       <div>
@@ -34,7 +43,7 @@ class Sidebar extends Component {
         <Collapse isOpen={!this.state.collapse}>
           <ul className="location-list">
             {this.props.locations.map(location => (
-              <li tabindex="0" className="location-list-item" onClick={() => this.props.onLocationClick(location)} key={location.name}>
+              <li tabIndex="0" onKeyDown={(event) => this.onKeyDown(event.keyCode, location)} className="location-list-item" onClick={() => this.props.onLocationClick(location)} key={location.name}>
                 {location.name}
                 {location.active ? <span>&#9733;</span> : null}
               </li>
