@@ -11,15 +11,17 @@ class IcelandMap extends Component {
 
   render() {
     return (
-      <GoogleMapReact className="map-container"
-        center={this.props.center}
-        defaultZoom={this.props.zoom}
-        bootstrapURLKeys={{ key: 'AIzaSyBiaMaHdJ9wp8EkO77je-iN4e2bS2DZDaU', language: 'en' }}
-      >
-        {this.props.locations.map(location => (
-          <Marker key={location.name} onMarkerClick={this.props.onMarkerClick} location={location} lat={location.coordinates.lat} lng={location.coordinates.lng} />
-        ))}
-      </GoogleMapReact>
+      <ErrorBoundary>
+        <GoogleMapReact className="map-container"
+          center={this.props.center}
+          defaultZoom={this.props.zoom}
+          bootstrapURLKeys={{ key: 'AIzaSyBiaMaHdJ9wp8EkO77je-iN4e2bS2DZDaU', language: 'en' }}
+        >
+          {this.props.locations.map(location => (
+            <Marker key={location.name} onMarkerClick={this.props.onMarkerClick} location={location} lat={location.coordinates.lat} lng={location.coordinates.lng} />
+          ))}
+        </GoogleMapReact>
+      </ErrorBoundary>
     );
   }
 }
