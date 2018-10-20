@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Container, Row, Col, Alert } from 'reactstrap';
+import { Container, Row, Col } from 'reactstrap';
 import Header from './components/baselayout/Header.js';
 import Sidebar from './components/baselayout/Sidebar.js';
 import IcelandMap from './components/map/IcelandMap';
