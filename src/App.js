@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Container, Row, Col } from 'reactstrap';
+import { Container, Row, Col, Alert } from 'reactstrap';
 import Header from './components/baselayout/Header.js';
 import Sidebar from './components/baselayout/Sidebar.js';
 import IcelandMap from './components/map/IcelandMap';
@@ -9,6 +9,8 @@ import './App.css';
 class App extends Component {
 
   state = {
+    alert: false,
+    visible: false,
     query: '',
     mapCenter: '',
     // In lieu of hosting an express server, just hard code the locations.
@@ -64,6 +66,15 @@ class App extends Component {
     ]
   }
 
+  onDismiss = () => {
+    /*
+      The user doesn't want to see the alert anymore,
+      so hide it. But the promises didn't resolve, so
+      keep alert = true
+    */
+    this.setState({ visible: false });
+  }
+
   handleQueryChange = (query) => {
     this.setState({ query })
   }
@@ -86,6 +97,13 @@ class App extends Component {
           headers: {
             'Authorization': `Client-ID ${unsplashClient}`
           }
+        }).catch(error => {
+          /*
+            The connection has been lost. Show a dismissable alert
+            and stop executing promises.
+          */
+          this.setState({ alert: true, visible: true });
+          return;
         })
           .then(response => response.json())
           .then(result => {
@@ -93,8 +111,11 @@ class App extends Component {
           });
       }
     });
-
-    this.setState({ locations: locationsCopy });
+    /*
+      If we get here, our promises resolved. Make sure no alert is showing
+      if something happened to our connection before.
+    */
+    this.setState({ locations: locationsCopy, alert: false, visible: false });
   }
 
   render() {
@@ -104,7 +125,9 @@ class App extends Component {
     return (
       <Container fluid className="App">
         <Header />
-
+        <Alert color="warning" isOpen={this.state.alert && this.state.visible} toggle={this.onDismiss}>
+          You are offline.
+        </Alert>
         <Row className="row-flex">
           <Col md="3">
             <Sidebar onQueryChange={this.handleQueryChange}
