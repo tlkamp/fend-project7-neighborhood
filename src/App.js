@@ -87,37 +87,6 @@ class App extends Component {
     this.setState({ locations: locationsCopy, mapCenter: locationObj.coordinates });
   }
 
-  componentDidMount() {
-    const unsplashClient = 'bd51d15e794da625807ddcb09eb619db5f26e44f4a23ece2415657b20899c7aa';
-
-    const locationsCopy = JSON.parse(JSON.stringify(this.state.locations));
-    locationsCopy.forEach(location => {
-      if (location.photoid) {
-        fetch(`https://api.unsplash.com/photos/${location.photoid}/?w=140&h=100`, {
-          headers: {
-            'Authorization': `Client-ID ${unsplashClient}`
-          }
-        }).catch(error => {
-          /*
-            The connection has been lost. Show a dismissable alert
-            and stop executing promises.
-          */
-          this.setState({ alert: true, visible: true });
-          return;
-        })
-          .then(response => response.json())
-          .then(result => {
-            location.photoUrl = result.urls.small;
-          });
-      }
-    });
-    /*
-      If we get here, our promises resolved. Make sure no alert is showing
-      if something happened to our connection before.
-    */
-    this.setState({ locations: locationsCopy, alert: false, visible: false });
-  }
-
   render() {
     const match = new RegExp(escapeRegExp(this.state.query), 'i');
     const locationsToRender = this.state.locations.filter(location => match.test(location.name));
@@ -125,9 +94,9 @@ class App extends Component {
     return (
       <Container fluid className="App">
         <Header />
-        <Alert color="warning" isOpen={this.state.alert && this.state.visible} toggle={this.onDismiss}>
+        {/* <Alert color="warning" isOpen={this.state.alert && this.state.visible} toggle={this.onDismiss}>
           You are offline.
-        </Alert>
+        </Alert> */}
         <Row className="row-flex">
           <Col md="3">
             <Sidebar onQueryChange={this.handleQueryChange}
