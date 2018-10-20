@@ -9,8 +9,6 @@ import './App.css';
 class App extends Component {
 
   state = {
-    alert: false,
-    visible: false,
     query: '',
     mapCenter: '',
     // In lieu of hosting an express server, just hard code the locations.
@@ -64,15 +62,6 @@ class App extends Component {
         photoid: 'qoHEr1mbZ3g'
       }
     ]
-  }
-
-  onDismiss = () => {
-    /*
-      The user doesn't want to see the alert anymore,
-      so hide it. But the promises didn't resolve, so
-      keep alert = true
-    */
-    this.setState({ visible: false });
   }
 
   handleQueryChange = (query) => {
