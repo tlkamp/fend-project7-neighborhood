@@ -39,7 +39,7 @@ $ npm install -g serve
 $ npm run build && serve -s build
  ```
 
- When the server is started, navigate to [`locahost:5000`](http://localhost:5000) in your browser.
+ When the server is started, navigate to [`localhost:5000`](http://localhost:5000) in your browser.
 
 ### Stopping the Local Server
 To stop the server, hit `control + c` in the terminal window where it is running.
