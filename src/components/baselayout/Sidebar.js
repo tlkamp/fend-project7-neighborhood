@@ -37,7 +37,7 @@ class Sidebar extends Component {
     return (
       <div>
         <InputGroup>
-          <Input onChange={(event) => this.updateQuery(event.target.value)} className="search-bar" placeholder="search" role="search" />
+          <Input onChange={(event) => this.updateQuery(event.target.value)} className="search-bar" aria-label="search" placeholder="search" role="search" />
           <Button size="sm" color="link" onClick={this.toggleList}>{this.state.showHide}</Button>
         </InputGroup>
         <Collapse isOpen={!this.state.collapse}>
