@@ -14,7 +14,7 @@ class IcelandMap extends Component {
   }
 
   componentDidMount() {
-    fetch('https://maps.googleapis.com/api/js?key=AIzaSyBiaMaHdJ9wp8EkO77je-iN4e2bS2DZDaU', {
+    fetch('https://maps.googleapis.com/maps/api/js?key=AIzaSyBiaMaHdJ9wp8EkO77je-iN4e2bS2DZDaU', {
       method: 'GET',
       mode: 'no-cors'
     }).then(response => response.json)
@@ -23,6 +23,7 @@ class IcelandMap extends Component {
   }
 
   render() {
+    // We need to throw an error to force the ErrorBoundary to be seen
     if (this.state.error) {
       throw new Error(`The Google Maps API did not load.`);
     }
