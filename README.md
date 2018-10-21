@@ -27,7 +27,12 @@ $ npm start
 ```
  A browser window should open and take you to the site. If it doesn't, you can navigate to [`localhost:3000`](http://localhost:3000) (or click the link!).
 
- **Note:** The service worker won't cache files served by the development server. Use the build server instead to enable service worker caching.
+ **Important Notes About the Dev Server:**
+   * The service worker won't cache files served by the development server.
+   * When the Google Maps API can't be loaded, an error is thrown. The dev server renders a stack trace instead of the application. This does not
+   occur in the production build.
+
+Use the production build server or live version of the app instead to enable these features.
 
  #### The Production Build Server
  To run the production build server, complete with service worker caching, perform the following actions:
