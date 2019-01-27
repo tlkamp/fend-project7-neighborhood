@@ -5,6 +5,7 @@
   "homepage": "http://tlkamp.com/iceland/",
   "dependencies": {
     "bootstrap": "^4.1.3",
+    "merge": ">=1.2.1",
     "escape-string-regexp": "^1.0.5",
     "gh-pages": "^2.0.1",
     "google-map-react": "^1.0.9",
