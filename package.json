@@ -1,8 +1,8 @@
 {
-  "name": "project7_neighborhood",
+  "name": "vacation-iceland",
   "version": "0.1.0",
   "private": true,
-  "homepage": "http://tlkamp.com/iceland/",
+  "homepage": "http://vacations.tlkamp.com/iceland/",
   "dependencies": {
     "bootstrap": ">=4.3.1",
     "escape-string-regexp": "^1.0.5",
