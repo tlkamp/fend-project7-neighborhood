@@ -8,6 +8,3 @@ This app is bootstrapped with [`create-react-app`](https://www.npmjs.com/package
 * [`reactstrap`](https://reactstrap.github.io/) and [Bootstrap](http://getbootstrap.com/) - for the style.
 * [`google-map-react`](https://www.npmjs.com/package/google-map-react) and [Google Maps](https://developers.google.com/maps/documentation/) - Google Maps API wrapped into React Components.
 * [Unsplash](https://unsplash.com/) - for image hosting/retrieval.
-
-## Viewing the App
-This app is hosted on my personal website [`vacations.tlkamp.com/iceland`](http://vacations.tlkamp.com/iceland)
